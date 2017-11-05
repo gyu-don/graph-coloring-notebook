@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="jquery.japan-map.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(() => {
+      var map = $('#map');
+      var colorgroup = [[1, 4, 9, 12, 20, 25, 30, 33, 36, 42, 43],
+ [5, 13, 15, 21, 22, 26, 31, 35, 38, 41, 44, 47],
+ [3, 6, 8, 10, 17, 19, 24, 27, 34, 37, 40, 46],
+ [2, 7, 11, 14, 16, 18, 23, 28, 29, 32, 39, 45]];
+      var areas = [
+        { 'code': 1, 'name': 'red', 'color': '#ff0000', 'prefectures': colorgroup[0] },
+        { 'code': 2, 'name': 'green', 'color': '#00ff00', 'prefectures': colorgroup[1] },
+        { 'code': 3, 'name': 'blue', 'color': '#0000ff', 'prefectures': colorgroup[2] },
+        { 'code': 4, 'name': 'yellow', 'color': '#ffff00', 'prefectures': colorgroup[3] },
+      ];
+      map.japanMap({width: 800, movesIslands: true, areas: areas });
+    });
+    </script>
+    <title>色塗り</title>
+  </head>
+  <body>
+    <div id="map"></div>
+    jQueryと<a href="https://github.com/takemaru-hirai/japan-map">jQuery Japan Map Plugin</a>を利用しています。
+  </body>
+</html>
+ 
